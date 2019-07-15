@@ -1,0 +1,21 @@
+package DAO;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class DBConnection {
+	public static Connection getConnection()
+	{
+		Connection con = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/job_portal", "root", "Ananya@97");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return con;
+	}
+
+
+}
